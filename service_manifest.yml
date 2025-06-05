@@ -1,0 +1,35 @@
+# Name of the service
+name: Lacus
+# Version of the service
+version: 4.6.0.stable0
+# Description of the service
+description: This Assemblyline service extracts artifacts from URLs.
+
+# Regex defining the types of files the service accepts and rejects
+accepts: uri/https?$
+rejects: empty|metadata/.*
+
+# At which stage the service should run (one of FILTER, EXTRACT, CORE, SECONDARY, POST, REVIEW)
+# NOTE: Stages are executed in the order defined in the list
+stage: CORE
+# Which category the service is part of (one of Antivirus, Dynamic Analysis, External, Extraction, Filtering, Internet Connected, Networking, Static Analysis)
+category: Internet Connected
+
+# Does the service require access to the file to perform its task
+# If set to false, the service will only have access to the file metadata (e.g. Hashes, size, type, ...)
+file_required: true
+# Maximum execution time the service has before it's considered to be timed out
+timeout: 120
+
+# is the service enabled by default
+enabled: true
+is_external: true
+
+# Docker configuration block which defines:
+#  - the name of the docker container that will be created
+#  - CPU and ram allocation by the container
+docker_config:
+  image: ${REGISTRY}/assemblyline-service-lacus:4.6.0.stable0
+  cpu_cores: 1.0
+  ram_mb: 1024
+  allow_internet_access: true
