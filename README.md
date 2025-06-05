@@ -19,6 +19,7 @@ all dependent services remain online as expected.
 ## TODO
 
 - So much
+- Auomated action to deploy stable to Dockerhub/GHCR
 - Add customizable User-Agent and HTTP Proxy
 - Optimize Dockerfile (size/performance of Lacus)
 - Resolve $SERVICE_TAG issues in service_manifest.yml
