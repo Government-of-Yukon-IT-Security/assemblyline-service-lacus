@@ -1,6 +1,9 @@
 # Lacus Service
 
+***DEPRECATED: Development will be moved to the [assemblyline-service-lookyloo](https://github.com/Government-of-Yukon-IT-Security/assemblyline-service-lookyloo) project which supports better artifact transformation than lacus does natively. ***
+
 This service extracts artifacts and captures from potentially malicious URLs.
+
 It uses the [Lacus](https://github.com/ail-project/lacus) tool from the [AIL Project](https://www.ail-project.org/).
 
 ## Overview
@@ -11,10 +14,11 @@ Assembyline.
 It was developed as a Proof of Concept (POC) service module for GeekWeek 10.
 
 ## Architecture
+
 Lacus is deployed basically as per the official deployment script on the Lacus repo. `supervisord` is used to ensure
 all dependent services remain online as expected.
 
-[PyLacus](https://github.com/ail-project/PyLacus) is used to provide an easy upgrade path to
+[PyLacus](https://github.com/ail-project/PyLacus) is used to provide an easy upgrade path to any feature changes.
 
 ## TODO
 
